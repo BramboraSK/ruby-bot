@@ -2,7 +2,7 @@ require 'discordrb'
 require 'yaml'
 
 config = YAML.load_file('config.yaml')
-bot = Discordrb::Commands::CommandBot.new(token: config["token"], prefix: config["prefix"], intents: [:servers, :server_messages, :server_voice_states])
+bot = Discordrb::Commands::CommandBot.new(token: config["token"], prefix: config["prefix"], intents: [:servers, :server_messages, :server_voice_states, :server_members])
 
 bot.command(:pripoj_sa) do |event|
     channel = event.user.voice_channel
